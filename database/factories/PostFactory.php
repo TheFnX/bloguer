@@ -27,8 +27,12 @@ class PostFactory extends Factory
         $name = $this->faker->unique()->sentence();
         
         return [
-            'name' => $name,
-            'slug' => Str::slug($name),
+            'name' => $name,      
+            'slug' => Str::slug($name),      
+            'date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'price' => $this->faker->numerify('###'),
+            'time' => $this->faker->time($format = 'H:i:', $max = 'now'),  
+            'modality' => $this->faker->randomElement(['Virtual', 'Presencial']),           
             'extract' => $this->faker->text(250),
             'body' => $this->faker->text(2000),
             'status' => $this->faker->randomElement([1, 2]),

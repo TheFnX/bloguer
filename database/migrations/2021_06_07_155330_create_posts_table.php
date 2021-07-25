@@ -17,6 +17,11 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->date('date')->nullable();
+            $table->string('price')->nullable();
+            $table->string('time')->nullable();
+            $table->string('modality')->nullable();
+
 
             $table->text('extract')->nullable();
             $table->longText('body')->nullable();
